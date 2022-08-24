@@ -1,0 +1,40 @@
+id: newrelic_observability
+title: Observability
+description: "If a system falls in the forest, does it make a sound? Yes, yes it does, and so do engineers when their systems fail—and these sounds are strikingly similar! The one thing that’s even worse than dealing with a failing system is not knowing that your system is failing. That’s why in this quest, you’ll add monitoring capabilities to your project by setting up observability tools and alerts."
+summary: "Nice job! You should now have a little more confidence in our app and in your ability to fix things when they will (and they will break, we promise ;) ). Now that you see how easy it is to configure a monitoring system, you should make a habit of doing it at the beginning of every production deployment."
+slogan: "Gaining visibility through data."
+prerequisites:
+- heroku_backend
+- heroku_frontend
+steps:
+- newrelic_observability_open_account
+- newrelic_observability_configure_apikey
+- newrelic_observability_configure_agent
+- newrelic_observability_configure_env_var
+duration: 0.75
+skills:
+- backend
+- devops
+- observability
+questDependency: deployment_frontend
+solutionBranch: quest_solution/deployment_observability
+messages:
+  questStarted:
+    person: head-of-rd
+    messages:
+    - text: "![](https://media.giphy.com/media/bUsjVuwagUmj4bWQos/giphy.gif)"
+      delay: 0
+    - text: "Hi there,"
+      delay: 1500
+    - text: "In order to continue, you need to **run the following command** on your repo: \`${scriptCommand}\` , and **let me know** once you're done."
+      delay: 1000
+  questStartedNotReady:
+    person: head-of-rd
+    messages:
+    - text: "Umm, having a problem? Email me at support@anythink.family, in case you need some urgent help."
+      delay: 1000
+  questFinished:
+    person: head-of-rd
+    messages:
+    - text: " So, you’ve done it! Time to lean back, relax, and look at the metrics. Not for any particular reason—just because it’s so fun. When you’re ready, [click here](${platform.home}) for your next project."
+      delay: 2200

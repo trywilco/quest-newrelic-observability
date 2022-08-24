@@ -1,0 +1,116 @@
+id: newrelic_observability_configure_env_var
+hints:
+- "Use the license key generated in the configuration file you’ve just downloaded."
+- "You can also find the license key in the <https://one.newrelic.com/api-keys|New Relic platform>, make sure to use a key with type `INGEST - LICENSE`"
+startFlow:
+  if:
+    conditions:
+      - conditionId: heroku_check_backend_config_var
+        name: new_relic_license_key_config
+        params:
+          key: NEW_RELIC_LICENSE_KEY
+      - conditionId: newrelic_license_key_valid
+        params:
+          licenseKey: '${outputs.new_relic_license_key_config.value}'
+      - conditionId: heroku_check_backend_config_var
+        params:
+          key: NEW_RELIC_APP_NAME
+    then:
+      do:
+        - actionId: bot_message
+          params:
+            person: devops
+            messages:
+              - text: "Great job, looks like you’ve already configured everything. Our application should start sending data to New Relic shortly."
+                delay: 1500
+        - actionId: finish_step
+    else:
+      do:
+        - actionId: bot_message
+          params:
+            person: devops
+            messages:
+              - text: "Now we need to set the New Relic environment variables on Heroku, so the agent can start properly and send data to New Relic."
+                delay: 0
+              - text: "We’ll need two variables -"
+                delay: 1000
+              - text: "\`NEW_RELIC_LICENSE_KEY\` - which will store our \`INGEST\` API key"
+                delay: 1000
+              - text: "\`NEW_RELIC_APP_NAME\` - the name of the application we want to monitor"
+                delay: 1000
+              - text: "Go ahead and configure those variables [in Heroku](${user.backendHerokuDashboardUrl})"
+                delay: 1000
+trigger:
+  type: heroku_release_created
+  flowNode:
+    if:
+      conditions:
+        - conditionId: heroku_check_event_type
+          params:
+            eventType: ^Set (.*) config var
+      then:
+        if:
+          conditions:
+            - conditionId: heroku_check_backend_config_var
+              name: new_relic_license_key_config
+              params:
+                key: NEW_RELIC_LICENSE_KEY
+          then:
+            if:
+              conditions:
+                - conditionId: newrelic_license_key_valid
+                  params:
+                    licenseKey: '${outputs.new_relic_license_key_config.value}'
+              then:
+                if:
+                  conditions:
+                    - conditionId: heroku_check_backend_config_var
+                      params:
+                        key: NEW_RELIC_APP_NAME
+                  then:
+                    do:
+                      - actionId: bot_message
+                        params:
+                          person: devops
+                          messages:
+                            - text: "Right, now everything works and the application should start sending data to New Relic shortly."
+                              delay: 1700
+                      - actionId: finish_step
+                  else:
+                    do:
+                      - actionId: bot_message
+                        params:
+                          person: devops
+                          messages:
+                            - text: 'Great! You got one key down, another one left'
+                              delay: 700
+              else:
+                do:
+                  - actionId: bot_message
+                    params:
+                      person: devops
+                      messages:
+                        - text: "This doesn’t seem like a valid license key. Wanna try again?"
+                          delay: 800
+          else:
+            if:
+              conditions:
+                - conditionId: heroku_check_backend_config_var
+                  params:
+                    key: NEW_RELIC_APP_NAME
+              then:
+                do:
+                  - actionId: bot_message
+                    params:
+                      person: devops
+                      messages:
+                        - text: 'Great! You got one key down, another one left'
+                          delay: 700
+              else:
+                do:
+                  - actionId: bot_message
+                    params:
+                      person: devops
+                      messages:
+                        - text: "Are you sure you’ve used the right environment variable name?"
+                          delay: 800
