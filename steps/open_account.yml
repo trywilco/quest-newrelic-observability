@@ -20,7 +20,9 @@ startFlow:
       - text: Now, all that’s left for you to do is connect observability tools to it. The first step you need to do is [open a New Relic account](https://newrelic.com/). Do that, and **tell me when you’re done**.  Oh, and if you’re wondering, all you need is the account — **no reason to proceed with the installation** plan.
         delay: 2500
 trigger:
-  type: user_message_to_devops
+  type: user_message
+  params:
+    person: devops
   flowNode:
     if:
       conditions:

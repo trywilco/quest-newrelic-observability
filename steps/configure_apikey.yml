@@ -15,7 +15,9 @@ startFlow:
       - text: Its type should be **`USER`,** and you can find the instructions for **generating one** [here](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/).\n**Ping me with the key** when you have generated it.
         delay: 2500
 trigger:
-  type: user_message_to_devops
+  type: user_message
+  params:
+    person: devops
   flowNode:
     do:
     - actionId: newrelic_configure_with_key
