@@ -25,6 +25,11 @@ skills:
 - backend
 - devops
 - observability
+learningObjectives:
+- Opening a NewRelic account
+- Connecting to NewRelic
+- Setting up monitoring 
+- Connecting a cloud app to NewRelic
 questDependency: deployment_frontend
 solutionBranch: quest_solution/deployment_observability
 messages:
