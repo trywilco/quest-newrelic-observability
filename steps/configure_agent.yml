@@ -1,4 +1,6 @@
 id: configure_agent
+learningObjectives:
+- Setting up monitoring 
 hints: []
 startFlow:
   do:
