@@ -1,4 +1,6 @@
 id: configure_apikey
+learningObjectives:
+  - Connecting to NewRelic
 hints:
 - On the New Relic one platform, click on your avatar on the top right corner, then click API Keys
 - On the API Keys screen, click `Create a key`
