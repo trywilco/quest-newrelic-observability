@@ -1,4 +1,6 @@
 id: configure_env_var
+learningObjectives:
+- Connecting a cloud app to New Relic
 hints:
 - Use the license key generated in the configuration file you’ve just downloaded.
 - You can also find the license key in the <https://one.newrelic.com/api-keys|New Relic platform>, make sure to use a key with type `INGEST - LICENSE`
