@@ -4,6 +4,7 @@ description: If a system falls in the forest, does it make a sound? Yes, yes it 
 summary: Nice job! You should now have a little more confidence in our app and in your ability to fix things when they will (and they will break, we promise ;) ). Now that you see how easy it is to configure a monitoring system, you should make a habit of doing it at the beginning of every production deployment.
 slogan: Gaining visibility through data.
 level: intermediate
+creator: https://uploads-ssl.webflow.com/62052cc3a330bb99a265ef11/62d9059a8d944464adfb36c9_logo-newrelic.svg
 resources:
 - name: heroku_backend
   clear:
