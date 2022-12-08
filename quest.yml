@@ -5,7 +5,7 @@ summary: Nice job! You should now have a little more confidence in our app and i
 slogan: Gaining visibility through data.
 level: intermediate
 creatorsLogoUrls: 
-- https://uploads-ssl.webflow.com/62052cc3a330bb99a265ef11/62d9059a8d944464adfb36c9_logo-newrelic.svg
+- "https://res.cloudinary.com/wilco/image/upload/v1670504368/companies-logos/New-Relic/new-relic-logo_icont2.svg"
 resources:
 - name: heroku_backend
   clear:
