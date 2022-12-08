@@ -3,6 +3,8 @@ title: Observability
 description: If a system falls in the forest, does it make a sound? Yes, yes it does, and so do engineers when their systems fail—and these sounds are strikingly similar! The one thing that’s even worse than dealing with a failing system is not knowing that your system is failing. That’s why in this quest, you’ll add monitoring capabilities to your project by setting up observability tools and alerts.
 summary: Nice job! You should now have a little more confidence in our app and in your ability to fix things when they will (and they will break, we promise ;) ). Now that you see how easy it is to configure a monitoring system, you should make a habit of doing it at the beginning of every production deployment.
 slogan: Gaining visibility through data.
+creatorsLogoUrls: 
+- "https://res.cloudinary.com/wilco/image/upload/v1670504368/companies-logos/New-Relic/new-relic-logo_icont2.svg"
 level: intermediate
 resources:
 - name: heroku_backend
