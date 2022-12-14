@@ -53,7 +53,7 @@ trigger:
       then:
         if:
           conditions:
-            - conditionId: heroku_check_backend_config_var
+            - conditionId: k8s_check_backend_config_var
               name: new_relic_license_key_config
               params:
                 key: NEW_RELIC_LICENSE_KEY
@@ -66,7 +66,7 @@ trigger:
               then:
                 if:
                   conditions:
-                    - conditionId: heroku_check_backend_config_var
+                    - conditionId: k8s_check_backend_config_var
                       params:
                         key: NEW_RELIC_APP_NAME
                   then:
@@ -97,7 +97,7 @@ trigger:
           else:
             if:
               conditions:
-                - conditionId: heroku_check_backend_config_var
+                - conditionId: k8s_check_backend_config_var
                   params:
                     key: NEW_RELIC_APP_NAME
               then:
