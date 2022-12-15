@@ -20,7 +20,7 @@ steps:
 - configure_agent
 - create_secret
 - add_deploy_env_var
-- push_updated_helm_with_env_var.yml
+- push_helm_with_env_var.yml
 duration: 0.75
 skills:
 - backend
