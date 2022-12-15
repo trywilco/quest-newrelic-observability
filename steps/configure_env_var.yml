@@ -32,7 +32,7 @@ startFlow:
           params:
             person: devops
             messages:
-              - text: Now we need to set the New Relic environment variables on Heroku, so the agent can start properly and send data to New Relic.
+              - text: Now we need to set the New Relic environment variables in our backend pods, so the agent can start properly and send data to New Relic.
                 delay: 0
               - text: We’ll need two variables -
                 delay: 1000
@@ -40,7 +40,7 @@ startFlow:
                 delay: 1000
               - text: "`NEW_RELIC_APP_NAME` - the name of the application we want to monitor"
                 delay: 1000
-              - text: Go ahead and configure those variables [in Heroku](${user.backendHerokuDashboardUrl})
+              - text: Go ahead and configure those variables backend.deployment.yaml
                 delay: 1000
 trigger:
   type: user_message

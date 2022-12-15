@@ -10,7 +10,7 @@ startFlow:
     paramsFramework:
       node:
         messages:
-        - text: Now it’s really time to add New Relic to your **backend** Heroku app.
+        - text: Now it’s really time to add New Relic to your **backend** deployed app.
           delay: 1000
         - text: It’s a relatively straightforward process, that begins [here](https://docs.newrelic.com/docs/apm/agents/nodejs-agent/installation-configuration/install-nodejs-agent/).
           delay: 1700
@@ -20,7 +20,7 @@ startFlow:
           delay: 1300
       rails:
         messages:
-        - text: Now it’s really time to add New Relic to your **backend** Heroku app.
+        - text: Now it’s really time to add New Relic to your **backend** deployed app.
           delay: 1000
         - text: It’s a relatively straightforward process, that begins [here](https://docs.newrelic.com/docs/apm/agents/ruby-agent/installation/install-new-relic-ruby-agent#Installing_the_Gem).
           delay: 1500
@@ -28,7 +28,7 @@ startFlow:
           delay: 1000
       python:
         messages:
-        - text: Now it’s really time to add New Relic to your **backend** Heroku app.
+        - text: Now it’s really time to add New Relic to your **backend** deployed app.
           delay: 1000
         - text: It’s a relatively straightforward process, that begins [here](https://docs.newrelic.com/docs/apm/agents/python-agent/installation/standard-python-agent-install/#install).
           delay: 1500
