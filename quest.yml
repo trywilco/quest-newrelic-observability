@@ -5,20 +5,19 @@ summary: Nice job! You should now have a little more confidence in our app and i
 slogan: Gaining visibility through data.
 level: intermediate
 resources:
-- name: heroku_backend
-  clear:
-    config_vars:
-    - NEW_RELIC_LICENSE_KEY
-    - NEW_RELIC_APP_NAME
-- name: heroku_frontend
+- name: k8s
+#  clear:
+#    config_vars:
+#    - NEW_RELIC_LICENSE_KEY
+#    - NEW_RELIC_APP_NAME
 - name: user
   clear:
     attribute:
     - newrelic
 steps:
-#- open_account
-#- configure_apikey
-#- configure_agent
+- open_account
+- configure_apikey
+- configure_agent
 - configure_env_var
 duration: 0.75
 skills:
