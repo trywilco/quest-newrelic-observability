@@ -33,7 +33,7 @@ trigger:
             - conditionId: github_is_file_modified
               paramsFramework:
                 node:
-                  fileName: backend/charts/templates/anythink-backend-deployment.yaml
+                  fileName: charts/templates/anythink-backend-deployment.yaml
               onFalseParams:
                 pr_reject_message: Did you make sure you've added the env vars to the relevant deployment yml?
                 pr_reject_message_name: missing_env_var
