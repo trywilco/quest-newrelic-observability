@@ -18,7 +18,9 @@ steps:
 - open_account
 - configure_apikey
 - configure_agent
-- configure_env_var
+- create_secret
+- add_deploy_env_var
+- push_updated_helm_with_env_var.yml
 duration: 0.75
 skills:
 - backend

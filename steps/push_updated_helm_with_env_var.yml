@@ -1,0 +1,69 @@
+id: configure_agent
+learningObjectives:
+- Setting up monitoring
+hints: []
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: devops
+        messages:
+          - text: All we are left with is doing a opening a PR with the new updaetd deploy
+trigger:
+  type: github_pr_lifecycle_status
+  flowNode:
+    switch:
+      key: ${eventType}
+      cases:
+        github_pr_opened:
+          do:
+          - actionId: bot_message
+            params:
+              person: devops
+              messages:
+              - text: Checking now
+                delay: 1000
+          - actionId: github_pr_comment
+            params:
+              person: devops
+              message: Checking now.
+        github_pr_workflow_complete_success:
+          if:
+            conditions:
+            - conditionId: github_is_file_modified
+              paramsFramework:
+                node:
+                  fileName: backend/charts/templates/anythink-backend-deployment.yaml
+              onFalseParams:
+                pr_reject_message: Did you make sure you've added the env vars to the relevant deployment yml?
+                pr_reject_message_name: missing_env_var
+            then:
+              do:
+              - actionId: bot_message
+                params:
+                  person: devops
+                  messages:
+                  - text: Looking good! You can merge the PR now.
+                    delay: 1000
+              - actionId: github_pr_approve
+                params:
+                  person: devops
+                  message: Looking good! You can merge the PR now.
+
+            else:
+              do:
+              - actionId: bot_message
+                params:
+                  person: devops
+                  messages:
+                  - text: ${pr_reject_message}
+                    delay: 1000
+              - actionId: github_pr_reject
+                params:
+                  person: devops
+                  message: ${pr_reject_message}
+                  messageName: ${pr_reject_message_name}
+
+        github_pr_merged:
+          do:
+          - actionId: finish_step
