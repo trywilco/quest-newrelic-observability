@@ -1,4 +1,4 @@
-id: configure_agent
+id: push_helm_with_env_var
 learningObjectives:
 - Setting up monitoring
 hints: []
