@@ -5,11 +5,12 @@ summary: Nice job! You should now have a little more confidence in our app and i
 slogan: Gaining visibility through data.
 level: intermediate
 resources:
-- name: k8s
-#  clear:
-#    config_vars:
-#    - NEW_RELIC_LICENSE_KEY
-#    - NEW_RELIC_APP_NAME
+  - name: k8s
+    config:
+      deploy: false
+    clear:
+      secrets:
+        - new-relic-license-key
 - name: user
   clear:
     attribute:
