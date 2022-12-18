@@ -11,10 +11,10 @@ resources:
     clear:
       secrets:
         - new-relic-license-key
-- name: user
-  clear:
-    attribute:
-    - newrelic
+  - name: user
+    clear:
+      attribute:
+      - newrelic
 steps:
 - open_account
 - configure_apikey
