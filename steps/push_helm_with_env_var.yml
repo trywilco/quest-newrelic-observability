@@ -105,10 +105,10 @@ trigger:
         github_pr_merged:
           do:
           - actionId: bot_message
-          params:
-            person: devops
-            messages:
-              - text: Great, your app will be soon deployed and monitored!
-                delay: 1000
+            params:
+              person: devops
+              messages:
+                - text: Great, your app will be soon deployed and monitored!
+                  delay: 1000
           - actionId: finish_step
 
