@@ -8,7 +8,22 @@ startFlow:
       params:
         person: devops
         messages:
-          - text: All we are left with is doing a opening a PR with the new updaetd deploy
+          - text: Now we need to set the New Relic environment variables in our backend pods, so the agent can start properly and send data to New Relic.
+            delay: 0
+          - text: We’ll need two variables -
+            delay: 1000
+          - text: "`NEW_RELIC_LICENSE_KEY` - which will store our `INGEST` API key"
+            delay: 1000
+          - text: "`NEW_RELIC_APP_NAME` - the name of the application we want to monitor"
+            delay: 1000
+          - text: Let's start by introducing 2 new env vars to the helm deployment config.
+            delay: 1000
+          - text: Go ahead to the charts/templates/anythink-backend-deployment.yaml and add the 2 env vars
+            delay: 1000
+          - text: The first, should be a reference to the secret we've just created `new-relic-license-key`
+            delay: 1000
+          - text: The second, should be a regular env var
+            delay: 1000
 trigger:
   type: github_pr_lifecycle_status
   flowNode:
@@ -37,6 +52,30 @@ trigger:
               onFalseParams:
                 pr_reject_message: Did you make sure you've added the env vars to the relevant deployment yml?
                 pr_reject_message_name: missing_env_var
+            - conditionId: github_is_file_contains
+              equals: true
+              params:
+                regex: NEW_RELIC_LICENSE_KEY
+                fileName: charts/templates/anythink-backend-deployment.yaml
+              onFalseParams:
+                pr_reject_message: It looks like you the env var `NEW_RELIC_LICENSE_KEY` is missing in your deployment yaml
+                pr_reject_message_name: missing_license_key_env_var
+            - conditionId: github_is_file_contains
+              equals: true
+              params:
+                regex: secretKeyRef
+                fileName: charts/templates/anythink-backend-deployment.yaml
+              onFalseParams:
+                pr_reject_message: Did you make sure the `NEW_RELIC_LICENSE_KEY` env var is referencing a key named `new-relic-license-key`
+                pr_reject_message_name: missing_secret_reference
+            - conditionId: github_is_file_contains
+              equals: true
+              params:
+                regex: NEW_RELIC_APP_NAME
+                fileName: charts/templates/anythink-backend-deployment.yaml
+              onFalseParams:
+                pr_reject_message: It looks like you the env var `NEW_RELIC_APP_NAME` is missing in your deployment yaml
+                pr_reject_message_name: missing_app_name_env_var
             then:
               do:
               - actionId: bot_message
@@ -49,7 +88,6 @@ trigger:
                 params:
                   person: devops
                   message: Looking good! You can merge the PR now.
-
             else:
               do:
               - actionId: bot_message
@@ -66,4 +104,11 @@ trigger:
 
         github_pr_merged:
           do:
+          - actionId: bot_message
+          params:
+            person: devops
+            messages:
+              - text: Great, your app will be soon deployed and monitored!
+                delay: 1000
           - actionId: finish_step
+
