@@ -8,13 +8,15 @@ resources:
   - name: k8s
     config:
       deploy: false
-    clear:
-      secrets:
+      clear:
+        secrets:
         - new-relic-license-key
+
   - name: user
-    clear:
-      attribute:
-      - newrelic
+    config:
+      clear:
+        attribute:
+        - newrelic
 steps:
 - open_account
 - configure_apikey
