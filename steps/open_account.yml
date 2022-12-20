@@ -17,7 +17,7 @@ startFlow:
         delay: 2500
       - text: And now, you might get to play the part of an observer as well, because we have a production system that needs you - to understand whether it functions properly.
         delay: 3500
-      - text: So we have the system itself set up, deployed in K8s. As a reminder, you can get the urls of your app using `kubectl get ingress`.
+      - text: So we have the system itself set up, deployed in K8s. As a reminder, you can get the urls of your backend and frontend apps using `kubectl get ingress` command.
         delay: 3500
       - text: Now, all that’s left for you to do is connect observability tools to it. The first step you need to do is [open a New Relic account](https://newrelic.com/). Do that, and **tell me when you’re done**.  Oh, and if you’re wondering, all you need is the account — **no reason to proceed with the installation** plan.
         delay: 2500

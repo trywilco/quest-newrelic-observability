@@ -1,7 +1,8 @@
 id: push_helm_with_env_var
 learningObjectives:
 - Setting up monitoring
-hints: []
+hints:
+  - An environment variable can reference a secret by creating an env var with the `valueFrom` field that point to a `secretKeyRef` field
 startFlow:
   do:
     - actionId: bot_message
@@ -16,11 +17,11 @@ startFlow:
             delay: 1000
           - text: "`NEW_RELIC_APP_NAME` - the name of the application we want to monitor"
             delay: 1000
-          - text: Let's start by introducing 2 new env vars to the helm deployment config.
+          - text: We shall introduce these two env vars by updating the relevant helm chart, in charge of the deployment config.
             delay: 1000
-          - text: Go ahead to the charts/templates/anythink-backend-deployment.yaml and add the 2 env vars
+          - text: "Go ahead to `charts/templates/anythink-backend-deployment.yaml` and them as follows:"
             delay: 1000
-          - text: The first, should be a reference to the secret we've just created `new-relic-license-key`
+          - text: The first, should be a reference to the secret we've just created, `new-relic-license-key`
             delay: 1000
           - text: The second, should be a regular env var
             delay: 1000
