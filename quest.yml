@@ -13,9 +13,8 @@ resources:
         - new-relic-license-key
 
   - name: user
-    config:
-      clear:
-        attribute:
+    clear:
+      attribute:
         - newrelic
 steps:
 - open_account
