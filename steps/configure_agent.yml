@@ -32,7 +32,7 @@ startFlow:
           delay: 1000
         - text: It’s a relatively straightforward process, that begins [here](https://docs.newrelic.com/docs/apm/agents/python-agent/installation/standard-python-agent-install/#install).
           delay: 1500
-        - text: "Follow the “Standard Python agent install” instructions.\n\nOh and by the way - we're using **`poetry`** and not `pip` directly. Instead of the part that says `pip install newrelic` be sure to use the `poetry add newrelic` command for adding a new package.\n\nAlso, once you have it installed, you should stop `docker-compose` and then rerun it to have it update the appropriate `requirements.txt` file.\n\nFinally, make sure you update how we run the app in Heroku (hint: look at the `Procfile` in the repository) and make sure you add the necessary New Relic admin script command, as per their instructions.\n\nWhen you’re done, **open a PR** and I’ll take a look."
+        - text: "Follow the “Standard Python agent install” instructions.\n\nOh and by the way - we're using **`poetry`** and not `pip` directly. Instead of the part that says `pip install newrelic` be sure to use the `poetry add newrelic` command for adding a new package.\n\nAlso, once you have it installed, you should stop `docker-compose` and then rerun it to have it update the appropriate `requirements.txt` file.\n\nFinally, make sure you update how we run the app in K8s (hint: look at the backend deployment chart in the repository) and make sure you add the necessary New Relic admin script command, as per their instructions.\n\nWhen you’re done, **open a PR** and I’ll take a look."
           delay: 3000
 trigger:
   type: github_pr_lifecycle_status
@@ -66,10 +66,10 @@ trigger:
             - conditionId: github_is_file_modified
               paramsFramework:
                 python:
-                  fileName: backend/Procfile
+                  fileName: charts/templates/anythink-backend-deployment.yaml
               onFalseParams:
-                pr_reject_message: Looks like you did not update the `Procfile`. Remember you need to add the New Relic admin script command in front of your usual startup command options.
-                pr_reject_message_name: procfile_not_updated
+                pr_reject_message: Looks like you did not update the `anythink-backend-deployment.yaml`. Remember you need to add the New Relic admin script command in front of your usual startup command options.
+                pr_reject_message_name: deployment_yaml_not_updated
 
             - conditionId: github_is_file_modified
               paramsFramework:

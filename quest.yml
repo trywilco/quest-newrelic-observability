@@ -22,7 +22,6 @@ steps:
 - configure_agent
 - create_secret
 - push_helm_with_env_var
-#- add_deploy_env_var
 duration: 0.75
 skills:
 - backend
@@ -48,5 +47,5 @@ messages:
   questFinished:
     person: devops
     messages:
-    - text: " So, you’ve done it! Time to lean back, relax, and look at the metrics. Not for any particular reason—just because it’s so fun. When you’re ready, [click here](${platform.home}) for your next project."
+    - text: " So, you’ve done it! Time to lean back, relax, and look at the metrics. It might take a few minutes for the data to show in New Relic UI. Not for any particular reason—just because it’s so fun. When you’re ready, [click here](${platform.home}) for your next project."
       delay: 2200
