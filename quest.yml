@@ -9,8 +9,6 @@ resources:
     config:
       deploy: true
       clear:
-        test-bad-clear-should-fail:
-        - should-fail
         secrets:
         - new-relic-license-key
 
