@@ -7,7 +7,7 @@ level: intermediate
 resources:
   - name: k8s
     config:
-      deploy: false
+      deploy: true
       clear:
         secrets:
         - new-relic-license-key
