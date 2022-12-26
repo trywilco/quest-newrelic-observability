@@ -27,7 +27,7 @@ skills:
 - backend
 - devops
 - observability
-questDependency: docker_localsetup
+questDependency: kubernetes
 solutionBranch: quest_solution/deployment_observability
 messages:
   questStarted:
