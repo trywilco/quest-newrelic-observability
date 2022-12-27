@@ -2,7 +2,7 @@ id: push_helm_with_env_var
 learningObjectives:
 - Setting up monitoring
 hints:
-  - An environment variable can reference a secret by creating an env var with the `valueFrom` field that point to a `secretKeyRef` field
+  - An environment variable can reference a secret by creating an environment variable with the `valueFrom` field that point to a `secretKeyRef` field
 startFlow:
   do:
     - actionId: bot_message
@@ -17,13 +17,13 @@ startFlow:
             delay: 1000
           - text: "`NEW_RELIC_APP_NAME` - the name of the application we want to monitor"
             delay: 1000
-          - text: We shall introduce these two env vars by updating the relevant helm chart, in charge of the deployment config.
+          - text: We shall introduce these two environment variables by updating the relevant helm chart, in charge of the deployment config.
             delay: 1000
           - text: "Go ahead to `charts/templates/anythink-backend-deployment.yaml` and them as follows:"
             delay: 1000
           - text: The first, should be a reference to the secret we've just created, `new-relic-license-key`
             delay: 1000
-          - text: The second, should be a regular env var
+          - text: The second, should be a regular environment variable
             delay: 1000
 trigger:
   type: github_pr_lifecycle_status
@@ -51,7 +51,7 @@ trigger:
                 node:
                   fileName: charts/templates/anythink-backend-deployment.yaml
               onFalseParams:
-                pr_reject_message: Did you make sure you've added the env vars to the relevant deployment yml?
+                pr_reject_message: Did you make sure you've added the environment variables to the relevant deployment yml?
                 pr_reject_message_name: missing_env_var
             - conditionId: github_is_file_contains
               equals: true
@@ -59,7 +59,7 @@ trigger:
                 regex: NEW_RELIC_LICENSE_KEY
                 fileName: charts/templates/anythink-backend-deployment.yaml
               onFalseParams:
-                pr_reject_message: It looks like you the env var `NEW_RELIC_LICENSE_KEY` is missing in your deployment yaml
+                pr_reject_message: It looks like you the environment variable `NEW_RELIC_LICENSE_KEY` is missing in your deployment yaml
                 pr_reject_message_name: missing_license_key_env_var
             - conditionId: github_is_file_contains
               equals: true
@@ -67,7 +67,7 @@ trigger:
                 regex: secretKeyRef
                 fileName: charts/templates/anythink-backend-deployment.yaml
               onFalseParams:
-                pr_reject_message: Did you make sure the `NEW_RELIC_LICENSE_KEY` env var is referencing a key named `new-relic-license-key`
+                pr_reject_message: Did you make sure the `NEW_RELIC_LICENSE_KEY` environment variable is referencing a key named `new-relic-license-key`
                 pr_reject_message_name: missing_secret_reference
             - conditionId: github_is_file_contains
               equals: true
@@ -75,7 +75,7 @@ trigger:
                 regex: NEW_RELIC_APP_NAME
                 fileName: charts/templates/anythink-backend-deployment.yaml
               onFalseParams:
-                pr_reject_message: It looks like you the env var `NEW_RELIC_APP_NAME` is missing in your deployment yaml
+                pr_reject_message: It looks like you the environment variable `NEW_RELIC_APP_NAME` is missing in your deployment yaml
                 pr_reject_message_name: missing_app_name_env_var
             then:
               do:
@@ -109,7 +109,7 @@ trigger:
             params:
               person: devops
               messages:
-                - text: Great, your app will be soon deployed and monitored!
+                - text: Great, and in a few minutes from now, your app will be soon deployed and monitored!
                   delay: 1000
           - actionId: finish_step
 
