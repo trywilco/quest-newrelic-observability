@@ -95,7 +95,7 @@ trigger:
                 pr_reject_message: I don’t see a New Relic config file. Won’t work without it.
                 pr_reject_message_name: missing_config
 
-            - conditionId: github_is_file_contains
+            - conditionId: github_does_file_contain
               equals: false
               params:
                 regex: license_key
