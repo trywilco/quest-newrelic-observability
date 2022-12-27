@@ -1,7 +1,9 @@
 id: configure_agent
 learningObjectives:
 - Setting up monitoring 
-hints: []
+hints:
+  - Make sure all relevant files were added to the PR
+  - Make sure you've deleted the `license_key` from the config files
 startFlow:
   do:
   - actionId: bot_message

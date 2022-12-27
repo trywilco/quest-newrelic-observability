@@ -47,5 +47,7 @@ messages:
   questFinished:
     person: devops
     messages:
-    - text: " So, you’ve done it! Time to lean back, relax, and look at the metrics. It might take a few minutes for the data to show in New Relic UI. Not for any particular reason—just because it’s so fun. When you’re ready, [click here](${platform.home}) for your next project."
+    - text: "You’ve done it! Time to lean back, relax, and look at the metrics. It might take a few minutes for the data to show in New Relic UI. Once the app will be ready, you'll see it in [here](https://one.newrelic.com/?duration=3600000)"
       delay: 2200
+    - text: "When you’re ready, [click here](${platform.home}) for your next project."
+      delay: 1000

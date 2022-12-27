@@ -25,6 +25,9 @@ startFlow:
             delay: 1000
           - text: The second, should be a regular environment variable
             delay: 1000
+          - text: Go ahead and open a PR with these changes.
+            delay: 1000
+
 trigger:
   type: github_pr_lifecycle_status
   flowNode:
