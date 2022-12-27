@@ -56,7 +56,7 @@ trigger:
               onFalseParams:
                 pr_reject_message: Did you make sure you've added the environment variables to the relevant deployment yml?
                 pr_reject_message_name: missing_env_var
-            - conditionId: github_is_file_contains
+            - conditionId: github_does_file_contain
               equals: true
               params:
                 regex: NEW_RELIC_LICENSE_KEY
@@ -64,7 +64,7 @@ trigger:
               onFalseParams:
                 pr_reject_message: It looks like you the environment variable `NEW_RELIC_LICENSE_KEY` is missing in your deployment yaml
                 pr_reject_message_name: missing_license_key_env_var
-            - conditionId: github_is_file_contains
+            - conditionId: github_does_file_contain
               equals: true
               params:
                 regex: secretKeyRef
@@ -72,7 +72,7 @@ trigger:
               onFalseParams:
                 pr_reject_message: Did you make sure the `NEW_RELIC_LICENSE_KEY` environment variable is referencing a key named `new-relic-license-key`
                 pr_reject_message_name: missing_secret_reference
-            - conditionId: github_is_file_contains
+            - conditionId: github_does_file_contain
               equals: true
               params:
                 regex: NEW_RELIC_APP_NAME
