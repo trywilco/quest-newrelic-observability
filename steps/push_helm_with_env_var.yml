@@ -2,7 +2,7 @@ id: push_helm_with_env_var
 learningObjectives:
 - Setting up monitoring
 hints:
-  - An environment variable can reference a secret by creating an environment variable with the `valueFrom` field that point to a `secretKeyRef` field. More info can be found in this [guide](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
+- An environment variable can reference a secret by creating an environment variable with the `valueFrom` field that point to a `secretKeyRef` field. More info can be found in this [guide](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
 startFlow:
   do:
     - actionId: bot_message
@@ -19,7 +19,7 @@ startFlow:
             delay: 1000
           - text: We shall introduce these two environment variables by updating the relevant helm chart, in charge of the deployment config.
             delay: 1000
-          - text: "Go ahead to `charts/templates/anythink-backend-deployment.yaml` and them as follows:"
+          - text: "Go ahead to `charts/templates/anythink-backend-deployment.yaml` and add the variables as follows:"
             delay: 1000
           - text: The first, should be a reference to the secret we've just created, `new-relic-license-key`
             delay: 1000
