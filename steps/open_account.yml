@@ -1,6 +1,6 @@
 id: open_account
 learningObjectives:
-  - Opening a New Relic account
+- Opening a New Relic account
 hints:
 - You can sign up for New Relic <https://newrelic.com/signup|here>
 startFlow:
