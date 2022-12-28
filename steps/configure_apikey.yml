@@ -1,6 +1,6 @@
 id: configure_apikey
 learningObjectives:
-  - Connecting to New Relic
+- Connecting to New Relic
 hints:
 - On the New Relic one platform, click on your avatar on the top right corner, then click API Keys
 - On the API Keys screen, click `Create a key`
@@ -12,6 +12,7 @@ startFlow:
       person: devops
       messages:
       - text: Time to commence the observing!
+        delay: 500
       - text: Just one thing before you begin observing others — I want to observe you more closely. All you need to do is **give me an API key** for your account. 
         delay: 1500
       - text: Its type should be **`USER`,** and you can find the instructions for **generating one** [here](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/).\n**Ping me with the key** when you have generated it.

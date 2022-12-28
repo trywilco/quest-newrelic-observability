@@ -5,27 +5,29 @@ summary: Nice job! You should now have a little more confidence in our app and i
 slogan: Gaining visibility through data.
 level: intermediate
 resources:
-- name: heroku_backend
-  clear:
-    config_vars:
-    - NEW_RELIC_LICENSE_KEY
-    - NEW_RELIC_APP_NAME
-- name: heroku_frontend
-- name: user
-  clear:
-    attribute:
-    - newrelic
+  - name: k8s
+    config:
+      deploy: true
+      clear:
+        secrets:
+        - new-relic-license-key
+
+  - name: user
+    clear:
+      attribute:
+        - newrelic
 steps:
 - open_account
 - configure_apikey
 - configure_agent
-- configure_env_var
+- create_secret
+- push_helm_with_env_var
 duration: 0.75
 skills:
 - backend
 - devops
 - observability
-questDependency: deployment_frontend
+questDependency: kubernetes
 solutionBranch: quest_solution/deployment_observability
 messages:
   questStarted:
@@ -45,5 +47,7 @@ messages:
   questFinished:
     person: devops
     messages:
-    - text: " So, you’ve done it! Time to lean back, relax, and look at the metrics. Not for any particular reason—just because it’s so fun. When you’re ready, [click here](${platform.home}) for your next project."
+    - text: "You’ve done it! Time to lean back, relax, and look at the metrics. It might take a few minutes for the data to show in New Relic UI. Once the app will be ready, you'll see it in [here](https://one.newrelic.com/?duration=3600000)"
       delay: 2200
+    - text: "When you’re ready, [click here](${platform.home}) for your next project."
+      delay: 1000
