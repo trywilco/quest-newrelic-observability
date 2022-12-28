@@ -2,7 +2,7 @@ id: push_helm_with_env_var
 learningObjectives:
 - Setting up monitoring
 hints:
-  - An environment variable can reference a secret by creating an environment variable with the `valueFrom` field that point to a `secretKeyRef` field
+  - An environment variable can reference a secret by creating an environment variable with the `valueFrom` field that point to a `secretKeyRef` field. More info can be found in this [guide](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
 startFlow:
   do:
     - actionId: bot_message
