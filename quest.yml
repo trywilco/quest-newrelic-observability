@@ -30,20 +30,6 @@ skills:
 questDependency: kubernetes
 solutionBranch: quest_solution/deployment_observability
 messages:
-  questStarted:
-    person: devops
-    messages:
-    - text: "![](https://media.giphy.com/media/bUsjVuwagUmj4bWQos/giphy.gif)"
-      delay: 0
-    - text: "Hi there,"
-      delay: 1500
-    - text: "In order to continue, you need to **run the following command** on your repo: `${scriptCommand}` , and **let me know** once you're done."
-      delay: 1000
-  questStartedNotReady:
-    person: devops
-    messages:
-    - text: "Umm, having a problem? Email me at support@anythink.family, in case you need some urgent help."
-      delay: 1000
   questFinished:
     person: devops
     messages:
