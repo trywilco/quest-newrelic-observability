@@ -30,11 +30,6 @@ skills:
 questDependency: kubernetes
 solutionBranch: quest_solution/deployment_observability
 messages:
-  questStartedNotReady:
-    person: devops
-    messages:
-    - text: "Umm, having a problem? Email me at support@anythink.family, in case you need some urgent help."
-      delay: 1000
   questFinished:
     person: devops
     messages:
