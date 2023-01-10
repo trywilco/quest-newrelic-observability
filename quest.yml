@@ -35,5 +35,7 @@ messages:
     messages:
     - text: "You’ve done it! Time to lean back, relax, and look at the metrics. It might take a few minutes for the data to show in New Relic UI. Once the app will be ready, you'll see it in [here](https://one.newrelic.com/?duration=3600000)"
       delay: 2200
-    - text: "When you’re ready, [click here](${platform.home}) for your next project."
-      delay: 1000
+    - text: "When you’re ready, טour next assignment awaits! Go ahead and choose your next task:"
+      delay: 2000
+      components:
+      - type: schedule_learning_time
