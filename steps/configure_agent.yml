@@ -109,7 +109,7 @@ trigger:
                 python:
                   fileName: backend/newrelic.ini
               onFalseParams:
-                pr_reject_message: I see you've committed a license key to Git. Shouldn't do that, security-wise. Please remove the entire property from the config file, we'll add it as an environment variable.
+                pr_reject_message: **Please delete the license key field and its value, also don't leave it commented out.** Keeping licesce key in the commited code is considered bad practice, security wise.
                 pr_reject_message_name: committed_license_key
 
             - conditionId: github_is_file_added
