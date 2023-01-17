@@ -109,7 +109,7 @@ trigger:
                 python:
                   fileName: backend/newrelic.ini
               onFalseParams:
-                pr_reject_message: **Please delete the license key field and its value, also don't leave it commented out.** Keeping licesce key in the commited code is considered bad practice, security wise.
+                pr_reject_message: "**Please delete the license key field and its value, also don't leave it commented out.** Keeping licesce key in the committed code is considered bad practice, security wise."
                 pr_reject_message_name: committed_license_key
 
             - conditionId: github_is_file_added
