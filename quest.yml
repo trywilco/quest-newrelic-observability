@@ -28,7 +28,6 @@ skills:
 - devops
 - observability
 questDependency: kubernetes
-solutionBranch: quest_solution/deployment_observability
 messages:
   questFinished:
     person: devops
