@@ -1,5 +1,6 @@
 id: newrelic_observability
 title: Observability
+subtitle: Add monitoring capabilities to your app using New Relic's tools
 description: If a system falls in the forest, does it make a sound? Yes, yes it does, and so do engineers when their systems fail—and these sounds are strikingly similar! The one thing that’s even worse than dealing with a failing system is not knowing that your system is failing. That’s why in this quest, you’ll add monitoring capabilities to your project by setting up observability tools and alerts.
 summary: Nice job! You should now have a little more confidence in our app and in your ability to fix things when they will (and they will break, we promise ;) ). Now that you see how easy it is to configure a monitoring system, you should make a habit of doing it at the beginning of every production deployment.
 slogan: Gaining visibility through data.
@@ -34,5 +35,3 @@ messages:
     messages:
     - text: "You’ve done it! Time to lean back, relax, and look at the metrics. It might take a few minutes for the data to show in New Relic UI. Once the app will be ready, you'll see it in [here](https://one.newrelic.com/?duration=3600000)"
       delay: 2200
-    - text: "When you’re ready, [click here](${platform.home}) for your next project."
-      delay: 1000
