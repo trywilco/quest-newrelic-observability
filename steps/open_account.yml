@@ -21,28 +21,6 @@ startFlow:
         delay: 3500
       - text: Now, all that’s left for you to do is connect observability tools to it. The first step you need to do is [open a New Relic account](https://newrelic.com/). Do that, and **tell me when you’re done**.  Oh, and if you’re wondering, all you need is the account — **no reason to proceed with the installation** plan.
         delay: 2500
-trigger:
-  type: user_message
-  params:
-    person: devops
-  flowNode:
-    if:
-      conditions:
-      - conditionId: is_user_message_text_ready_to_continue
-      then:
-        do:
-        - actionId: bot_message
-          params:
-            person: devops
-            messages:
-            - text: Cool. Moving on.
-              delay: 1500
-        - actionId: finish_step
-      else:
-        do:
-        - actionId: bot_message
-          params:
-            person: devops
-            messages:
-            - text: Umm, If you need any help, just let me know that you’re stuck. If that’s not the case - take your time and tell me once you're ready :)
-              delay: 2000
+  - actionId: ready_message
+    params:
+      person: devops
