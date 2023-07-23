@@ -9,18 +9,12 @@ startFlow:
     params:
       person: devops
       messages:
-      - text: So, we are being watched. You know that, right? All of us, by numerous parties
-        delay: 2000
-      - text: "**Isn’t it great?**"
-        delay: 3000
-      - text: I, for once, sleep better knowing that if something happens, someone will be notified. What can happen and who will be notified? It doesn’t really matter to me!
-        delay: 2500
-      - text: And now, you might get to play the part of an observer as well, because we have a production system that needs you - to understand whether it functions properly.
-        delay: 3500
-      - text: So we have the system itself set up, deployed in K8s. As a reminder, you can get the urls of your backend and frontend apps using `kubectl get ingress` command.
-        delay: 3500
-      - text: Now, all that’s left for you to do is connect observability tools to it. The first step you need to do is [open a New Relic account](https://newrelic.com/). Do that, and **tell me when you’re done**.  Oh, and if you’re wondering, all you need is the account — **no reason to proceed with the installation** plan.
-        delay: 2500
+      - text: As for every production system, we need to make sure ours functions properly at all times.
+        delay: 1200
+      - text: To do so, we’ll use integrate New Relic’s agent to our kubernetes deployed app.
+        delay: 1000
+      - text: The first step you need to do is to [open a New Relic account](https://newrelic.com/). Do that, and **tell me when you’re done**.  Oh, and if you’re wondering, all you need is the account — **no reason to proceed with the installation** plan.
+        delay: 1200
   - actionId: ready_message
     params:
       person: devops
