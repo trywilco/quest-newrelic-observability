@@ -11,7 +11,7 @@ startFlow:
       messages:
       - text: As for every production system, we need to make sure ours functions properly at all times.
         delay: 1200
-      - text: To do so, we’ll use integrate New Relic’s agent to our kubernetes deployed app.
+      - text: To do so, we’ll integrate New Relic’s agent to our kubernetes deployed app.
         delay: 1000
       - text: And just before we start, I’ll mention that the urls of your backend and frontend apps can be fetched using the `kubectl get ingress` command.
         delay: 1000
