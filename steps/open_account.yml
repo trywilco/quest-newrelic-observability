@@ -13,6 +13,8 @@ startFlow:
         delay: 1200
       - text: To do so, we’ll use integrate New Relic’s agent to our kubernetes deployed app.
         delay: 1000
+      - text: And just before we start, I’ll mention that the urls of your backend and frontend apps can be fetched using the `kubectl get ingress` command.
+        delay: 1000
       - text: The first step you need to do is to [open a New Relic account](https://newrelic.com/). Do that, and **tell me when you’re done**.  Oh, and if you’re wondering, all you need is the account — **no reason to proceed with the installation** plan.
         delay: 1200
   - actionId: ready_message
