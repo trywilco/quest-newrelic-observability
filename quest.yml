@@ -17,6 +17,7 @@ resources:
     clear:
       attribute:
         - newrelic
+  - name: newrelic
 repository: https://github.com/trywilco/Anythink-Market-NewRelic
 steps:
 - open_account
